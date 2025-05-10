@@ -12,8 +12,9 @@ main:
     url: /portfolio/
         
     
-  - title: "CV"
-    url: /Phan, Tim_Resume.pdf
+  - title: '<a href="/Phan, Tim_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>'
+    external: true
+
     
   # - title: "CV"
   #   url: /cv-json/
