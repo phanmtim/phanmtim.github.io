@@ -16,7 +16,7 @@ Recently
 ======
 - IMC Prosperity 3 - Top 16% in global trading competition (Solo member) 
 - ByteFight - 8th place in GT AI bot development competition 
-- Hacklytics 2025 - 2nd place in Assurant Challenge: Revolutionize AI Solutioning with Multimodal Agentic AI
+- Hacklytics 2025 - 2nd place in Assurant Challenge: Revolutionize AI Solutioning with Multimodal Agentic AI or Accelerate Predictive Insights-at-Scale with Multi-Agent AI Systems
 
 Some Coursework 
 ======
