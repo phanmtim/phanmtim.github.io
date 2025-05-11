@@ -15,7 +15,7 @@ Feel free connect with me on LinkedIn or reach out via email about any research 
 Recently
 ======
 - IMC Prosperity 3 - Top 16% in global trading competition (Solo member) 
-- ByteFight - 8th place in GT AI development competition 
+- ByteFight - 8th place in GT AI bot development competition 
 - Hacklytics 2025 - 2nd place in Assurant Challenge: Revolutionize AI Solutioning with Multimodal Agentic AI
 
 Some Coursework 
