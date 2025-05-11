@@ -24,8 +24,8 @@ author:
   # Biographic information
   avatar           : "headshot.png"
   name             : "Tim Phan"
-  pronouns         : "he/him"  
-  bio              : "QCF Student at Georgia Tech"
+  pronouns         : 
+  bio              : "QCF @ Georgia Tech"
   location         : "Atlanta, GA"
   employer         : "Georgia Institute of Technology"
   uri              : # URL
