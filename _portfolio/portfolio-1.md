@@ -1,7 +1,5 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Caduceo"
+excerpt: "Developed a healthcare cost analysis chatbot that leverages OCR, NLP, and machine learning to detect overcharges in medical bills, providing accurate charge classification and explanations through a conversational interface. Engineered a multimodal AI pipeline integrating Azure AI Vision for OCR, a 4-bit quantized LLaMA 3.2B model, DBSCAN clustering, and MongoDB/Snowflake, achieving a Silhouette coefficient above 0.90 for charge anomaly detection. This project earned 2nd Place in the Assurant Challenge: Revolutionize AI Solutioning with Multimodal Agentic AI, where I collaborated with a team to deliver an end-to-end solution combining large language models, clustering algorithms, cloud services, and real-time data infrastructure.<br/><img src='/images/caduceo.jpg'>"
 collection: portfolio
----
-
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+link: "https://devpost.com/software/caduceus-n4jqzs"
