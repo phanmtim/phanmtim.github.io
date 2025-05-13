@@ -20,19 +20,19 @@ Recently
 
 Some Coursework 
 ======
+Graduate:
+- Natural Language Process
+- Deep Learning
+- Computational Data Analysis: Classical machine learning algorithms 
+- Numerical Methods in Finance: Numerical and simulation techniques for partial differential equations 
+- Derivative Securities
+- Fixed Income Securities 
+
 Undergrad: 
 - Python for Data Science
 - Analytics: Taught theoretically aligning with ISLR book
 - Data Preparation and Visualization 
 - Databases 
-
-Graduate:
-- Natural Language Process
-- Deep Learning
-- Computational Data Analysis: Classical machine learning algorithms 
-- Numerical Methods in Finance: Numerical and simulation techniques for the pricing of derivative securities and partial differential equations 
-- Derivative Securities
-- Fixed Income Securities 
 
 Clubs
 ======
