@@ -8,7 +8,7 @@ redirect_from:
 ---
 Hey, I'm Tim! 
 
-I'm a graduate student at Georgia Tech pursuing a Master’s in Quantitative and Computational Finance, with a strong interest in machine learning and data science. I previously graduated with a bachelor's in Information Systems, also from Georgia Tech, in December 2024. I have taken several courses in financial mathematics, machine learning, deep learning, etc... I have experience with machine learning methods and data science. This is where my interests generally lie and I hope to continue working on some fun personal projects outside of class this summer! 
+I'm a graduate student at Georgia Tech pursuing a Master’s in Quantitative and Computational Finance and a Master's in Computational Science and Engineering, with a strong interest in machine learning and AI. I previously graduated with a bachelor's in Information Systems, also from Georgia Tech, in December 2024. I have taken several courses in financial mathematics, machine learning, deep learning, etc... I have experience with machine learning methods and data science. This is where my interests generally lie and I hope to continue working on some fun personal projects outside of class this summer! 
 
 Feel free connect with me on LinkedIn or reach out via email about any research / project opportunities! 
 
