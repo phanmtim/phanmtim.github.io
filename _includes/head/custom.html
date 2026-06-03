@@ -9,8 +9,23 @@
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#07070b"/>
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+
+<!-- Inter: best free substitute for Apple's SF Pro -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+
+<!-- Force dark theme always (light mode removed) -->
+<script>
+  try { localStorage.setItem("theme", "dark"); } catch (e) {}
+  document.documentElement.setAttribute("data-theme", "dark");
+</script>
+
+<!-- Apple-style dark + glow redesign (loads after main.css so it wins the cascade) -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/glow.css"/>
+<script defer src="{{ base_path }}/assets/js/glow-scroll.js"></script>
 
 
 <!-- Support for MatJax -->

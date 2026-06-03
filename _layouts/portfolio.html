@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main class="glow-home glow-portfolio">
+
+  <section class="glow-phead">
+    <p class="glow-kicker reveal">Portfolio</p>
+    <h1 class="glow-phead__title reveal">{{ page.title | default: "Portfolio" }}</h1>
+    {% if page.intro %}<p class="glow-phead__sub reveal">{{ page.intro }}</p>{% endif %}
+  </section>
+
+  <section class="glow-section" style="padding-top: 1rem;">
+    <div class="glow-pgrid">
+      {% for post in site.portfolio %}
+        {% comment %} excerpts end with a trailing <img>; split it off so we can frame it on top {% endcomment %}
+        {% assign parts = post.excerpt | split: '<img' %}
+        {% assign body = parts[0] | replace: '<br/>', '' | replace: '<br />', '' | replace: '<br>', '' %}
+        {% if parts.size > 1 %}{% assign img = parts[1] | prepend: '<img' %}{% else %}{% assign img = nil %}{% endif %}
+        {% if post.link contains 'http' %}{% assign tgt = 'target="_blank" rel="noopener"' %}{% else %}{% assign tgt = '' %}{% endif %}
+
+        <article class="glow-pcard reveal" style="--i: {{ forloop.index0 }}">
+          {% if img %}
+            <a class="glow-pcard__media" href="{{ post.link }}" {{ tgt }} aria-label="{{ post.title | escape }}">{{ img }}</a>
+          {% endif %}
+          <div class="glow-pcard__body">
+            <h2 class="glow-pcard__title">{{ post.title }}</h2>
+            <div class="glow-pcard__desc">{{ body | markdownify }}</div>
+            <button class="glow-pcard__more" type="button" hidden>Read more</button>
+            {% if post.link %}
+              <a class="glow-pcard__link" href="{{ post.link }}" {{ tgt }}>View project <span>&rarr;</span></a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+</main>
