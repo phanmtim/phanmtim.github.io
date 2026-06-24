@@ -16,47 +16,63 @@ layout: default
 
   <!-- ===================== HERO ===================== -->
   <section class="glow-hero" id="hero">
-    <div class="glow-hero__inner" data-hero-fade data-mouse="0.03">
-      <div class="glow-hero__avatar reveal">
-        <img src="{{ avatar_url }}" alt="{{ site.author.name }}" loading="eager" />
+    <div class="glow-hero__grid">
+
+      <div class="glow-hero__lead">
+        <div class="glow-hero__id">
+          <img class="glow-hero__avatar" src="{{ avatar_url }}" alt="{{ site.author.name }}" loading="eager" />
+          {% if page.role %}<p class="glow-hero__eyebrow">{{ page.role }}</p>{% endif %}
+        </div>
+
+        <h1 class="glow-hero__name">{{ page.title | default: site.author.name }}</h1>
+
+        {% if page.tagline %}<p class="glow-hero__tagline">{{ page.tagline }}</p>{% endif %}
+
+        <div class="glow-hero__cta">
+          {% if site.author.email %}<a class="glow-btn glow-btn--primary" href="mailto:{{ site.author.email }}">Get in touch</a>{% endif %}
+          <a class="glow-btn glow-btn--secondary" href="{{ base_path }}/portfolio/">View work</a>
+        </div>
+
+        <div class="glow-hero__socials">
+          {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>{% endif %}
+          {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
+          {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
+          {% if site.author.email %}<a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>{% endif %}
+        </div>
       </div>
 
-      {% if page.role %}<p class="glow-hero__eyebrow reveal">{{ page.role }}</p>{% endif %}
+      <!-- Signature dark "product chrome": a code window -->
+      <div class="glow-hero__art" aria-hidden="true">
+        <div class="code-window">
+          <div class="code-window__bar">
+            <span class="code-window__dots"><i></i><i></i><i></i></span>
+            <span class="code-window__file">tim.py</span>
+          </div>
+          <pre class="code-window__body"><code><span class="tk-kw">class</span> <span class="tk-cls">TimPhan</span>:
+    school <span class="tk-op">=</span> <span class="tk-str">"Georgia Tech"</span>
+    focus  <span class="tk-op">=</span> [<span class="tk-str">"machine learning"</span>, <span class="tk-str">"quant finance"</span>]
 
-      <h1 class="glow-hero__name reveal">{{ page.title | default: site.author.name }}</h1>
+    <span class="tk-kw">def</span> <span class="tk-fn">building</span>(<span class="tk-self">self</span>):
+        <span class="tk-kw">return</span> [
+            <span class="tk-str">"MS Quantitative &amp; Computational Finance"</span>,
+            <span class="tk-str">"MS Computational Science &amp; Engineering"</span>,
+        ]
 
-      {% if page.tagline %}<p class="glow-hero__tagline reveal">{{ page.tagline }}</p>{% endif %}
-
-      <div class="glow-hero__cta reveal">
-        {% for link in site.data.navigation.main %}
-          {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
-          <a class="glow-btn {% if forloop.first %}glow-btn--primary{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
-        {% if site.author.email %}
-          <a class="glow-btn glow-btn--ghost" href="mailto:{{ site.author.email }}">Email</a>
-        {% endif %}
+    <span class="tk-kw">def</span> <span class="tk-fn">ship</span>(<span class="tk-self">self</span>, idea):
+        <span class="tk-kw">return</span> <span class="tk-cls">Model</span>(idea).train().deploy()  <span class="tk-com"># let's talk →</span></code></pre>
+        </div>
       </div>
 
-      <div class="glow-hero__socials reveal">
-        {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>{% endif %}
-        {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
-        {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
-        {% if site.author.email %}<a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>{% endif %}
-      </div>
     </div>
   </section>
 
   <!-- ===================== ABOUT ===================== -->
   {% if page.intro or content != "" %}
   <section class="glow-section" id="about">
-    <div class="glow-section__wrap">
-      <p class="glow-kicker reveal">About</p>
-      {% if page.intro %}
-        <p class="glow-lead reveal">{{ page.intro }}</p>
-      {% endif %}
-      {% if content != "" %}
-        <div class="glow-prose reveal">{{ content }}</div>
-      {% endif %}
+    <div class="glow-section__wrap glow-about">
+      <p class="glow-kicker">About</p>
+      {% if page.intro %}<p class="glow-lead">{{ page.intro }}</p>{% endif %}
+      {% if content != "" %}<div class="glow-prose">{{ content }}</div>{% endif %}
     </div>
   </section>
   {% endif %}
@@ -65,8 +81,8 @@ layout: default
   {% if page.highlights %}
   <section class="glow-section" id="highlights">
     <div class="glow-section__wrap">
-      <p class="glow-kicker reveal">Recently</p>
-      <h2 class="glow-h2 reveal">A few things I'm proud of.</h2>
+      <p class="glow-kicker">Recently</p>
+      <h2 class="glow-h2">A few things I'm proud of.</h2>
       <div class="glow-cards">
         {% for h in page.highlights %}
           <article class="glow-card reveal" style="--i: {{ forloop.index0 }}">
@@ -80,12 +96,12 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- ===================== RESUME: education + coursework ===================== -->
+  <!-- ===================== EDUCATION (dark band) ===================== -->
   {% if page.education or page.coursework %}
-  <section class="glow-section" id="resume">
+  <section class="glow-section glow-section--dark" id="resume">
     <div class="glow-section__wrap">
-      <p class="glow-kicker reveal">Resume</p>
-      <h2 class="glow-h2 reveal">Education.</h2>
+      <p class="glow-kicker glow-kicker--ondark">Resume</p>
+      <h2 class="glow-h2 glow-h2--ondark">Education.</h2>
 
       {% if page.education %}
       <ol class="glow-timeline">
@@ -103,10 +119,10 @@ layout: default
 
       {% if page.coursework %}
       <div class="glow-cw">
-        <h3 class="glow-cw__head reveal">Relevant coursework</h3>
+        <h3 class="glow-cw__head">Relevant coursework</h3>
         <div class="glow-cols">
           {% if page.coursework.graduate %}
-          <div class="glow-col reveal">
+          <div class="glow-col">
             <h4 class="glow-col__title">Graduate</h4>
             <ul class="glow-chiplist">
               {% for c in page.coursework.graduate %}<li class="glow-chip">{{ c }}</li>{% endfor %}
@@ -114,7 +130,7 @@ layout: default
           </div>
           {% endif %}
           {% if page.coursework.undergraduate %}
-          <div class="glow-col reveal">
+          <div class="glow-col">
             <h4 class="glow-col__title">Undergraduate</h4>
             <ul class="glow-chiplist">
               {% for c in page.coursework.undergraduate %}<li class="glow-chip">{{ c }}</li>{% endfor %}
@@ -132,24 +148,24 @@ layout: default
   {% if page.clubs %}
   <section class="glow-section" id="clubs">
     <div class="glow-section__wrap">
-      <p class="glow-kicker reveal">Off the clock</p>
-      <h2 class="glow-h2 reveal">Communities I'm part of.</h2>
+      <p class="glow-kicker">Off the clock</p>
+      <h2 class="glow-h2">Communities I'm part of.</h2>
       <ul class="glow-badges">
-        {% for club in page.clubs %}<li class="glow-badge reveal" style="--i: {{ forloop.index0 }}">{{ club }}</li>{% endfor %}
+        {% for club in page.clubs %}<li class="glow-badge">{{ club }}</li>{% endfor %}
       </ul>
     </div>
   </section>
   {% endif %}
 
-  <!-- ===================== CONNECT ===================== -->
+  <!-- ===================== CONNECT (coral callout) ===================== -->
   <section class="glow-section glow-connect" id="connect">
-    <div class="glow-section__wrap glow-connect__wrap reveal">
+    <div class="glow-section__wrap glow-connect__wrap">
       <h2 class="glow-connect__title">Let's build something.</h2>
       <p class="glow-connect__sub">Reach out about research, projects, or just to say hi.</p>
-      <div class="glow-hero__cta">
-        {% if site.author.email %}<a class="glow-btn glow-btn--primary" href="mailto:{{ site.author.email }}">Get in touch</a>{% endif %}
-        {% if site.author.linkedin %}<a class="glow-btn glow-btn--ghost" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>{% endif %}
-        {% if site.author.github %}<a class="glow-btn glow-btn--ghost" href="https://github.com/{{ site.author.github }}">GitHub</a>{% endif %}
+      <div class="glow-hero__cta glow-connect__cta">
+        {% if site.author.email %}<a class="glow-btn glow-btn--oncoral" href="mailto:{{ site.author.email }}">Get in touch</a>{% endif %}
+        {% if site.author.linkedin %}<a class="glow-btn glow-btn--coral-ghost" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>{% endif %}
+        {% if site.author.github %}<a class="glow-btn glow-btn--coral-ghost" href="https://github.com/{{ site.author.github }}">GitHub</a>{% endif %}
       </div>
     </div>
   </section>

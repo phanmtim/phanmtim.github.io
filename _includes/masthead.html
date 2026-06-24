@@ -15,6 +15,9 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
+          {% if site.author.email %}
+            <li class="masthead__menu-item masthead__menu-item--cta persist tail"><a class="masthead-cta" href="mailto:{{ site.author.email }}">Get in touch</a></li>
+          {% endif %}
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
