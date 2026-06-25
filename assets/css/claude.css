@@ -404,6 +404,10 @@ a.masthead-cta:hover { background: var(--c-primary-active); }
 .glow-pcard__link:hover { color: var(--c-primary-active); }
 .glow-pcard__link:hover span { transform: translateX(4px); }
 
+/* Multiple actions (e.g. paper + site) sit in one row, pinned to card bottom */
+.pf-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 18px; }
+.pf-actions .glow-pcard__link { margin-top: 0; }
+
 /* ==========================================================================
    Footer + generic content pages
    ========================================================================== */
@@ -461,6 +465,14 @@ a.masthead-cta:hover { background: var(--c-primary-active); }
 }
 .pf-featured__desc p { margin: 0; display: inline; }
 .pf-featured__desc img { display: none; }
+.pf-featured.is-open .pf-featured__desc { display: block; -webkit-line-clamp: unset; overflow: visible; }
+.pf-featured.is-open .pf-featured__desc p { display: block; }
+.pf-featured__more {
+  align-self: flex-start; margin: 0 0 18px; padding: 0; background: none; border: none;
+  font-family: var(--c-font-body); font-size: 14px; font-weight: 500; color: var(--c-on-dark); cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.pf-featured__more:hover { color: var(--c-primary); }
 
 /* Tag pills */
 .pf-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }

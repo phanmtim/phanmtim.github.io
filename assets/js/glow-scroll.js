@@ -36,11 +36,10 @@
       }
     }
 
-    /* ---- Portfolio "Read more" toggles ---- */
-    var pcards = Array.prototype.slice.call(document.querySelectorAll(".glow-pcard"));
-    pcards.forEach(function (card) {
-      var desc = card.querySelector(".glow-pcard__desc");
-      var btn = card.querySelector(".glow-pcard__more");
+    /* ---- Portfolio "Read more" toggles (grid + featured cards) ---- */
+    function wireMore(card, descSel, btnSel) {
+      var desc = card.querySelector(descSel);
+      var btn = card.querySelector(btnSel);
       if (!desc || !btn) return;
       // Only show the toggle if the text is actually clamped/overflowing.
       if (desc.scrollHeight - desc.clientHeight > 4) {
@@ -50,7 +49,11 @@
           btn.textContent = open ? "Show less" : "Read more";
         });
       }
-    });
+    }
+    Array.prototype.slice.call(document.querySelectorAll(".glow-pcard"))
+      .forEach(function (card) { wireMore(card, ".glow-pcard__desc", ".glow-pcard__more"); });
+    Array.prototype.slice.call(document.querySelectorAll(".pf-featured"))
+      .forEach(function (card) { wireMore(card, ".pf-featured__desc", ".pf-featured__more"); });
 
     /* ---- Scroll progress bar (cheap, rAF-throttled). No parallax. ---- */
     var scrollTicking = false;
