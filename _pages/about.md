@@ -36,19 +36,47 @@ education:
   - date: "May 2023 – Dec 2024"
     degree: "B.S. in Information Systems"
     school: "Georgia Institute of Technology"
+experience:
+  - date: "Jun 2026 – Present"
+    role: "Data & AI Engineering Intern (DESP 2026)"
+    org: "AT&T Inc."
+  - date: "Apr 2025 – May 2025"
+    role: "Algorithm Developer"
+    org: "AI @ Georgia Tech ByteFight"
+  - date: "May 2024 – Aug 2024"
+    role: "IT&D Intern"
+    org: "Smurfit Westrock"
+skills:
+  - category: "Languages"
+    items: [Python, R, SQL]
+  - category: "Machine Learning"
+    items: [scikit-learn, TensorFlow, PyTorch, Hugging Face, Classical ML, Deep Learning, NLP, Agentic AI, RAG]
+  - category: "Data Science"
+    items: [NumPy, Pandas, Matplotlib, Seaborn, Tableau, Excel]
+  - category: "MLOps & Tools"
+    items: [Git, VS Code, Jupyter, MongoDB, Snowflake, Azure, Kubernetes, Databricks, MLflow, FastAPI, Docker]
 coursework:
   graduate:
-    - Natural Language Processing
     - Deep Learning
+    - Natural Language Processing
     - Computational Data Analysis
+    - Algorithms
+    - Modeling & Simulation
+    - High Performance Computing
+    - Data Vis Principles
+    - Data & Visual Analytics
+    - Financial Optimization
+    - Investments
     - AI for Finance
-    - Derivative Securities
+    - Numerical Methods in Finance
     - Fixed Income Securities
+    - Derivative Securities
   undergraduate:
-    - Python for Data Science
-    - Statistical Learning (ISLR)
-    - Data Prep & Visualization
+    - Object-Oriented Programming
     - Databases
+    - Analytics
+    - Python for Data Science
+    - Data Prep & Visualization
 clubs:
   - Data Science @ GT
   - Trading Club

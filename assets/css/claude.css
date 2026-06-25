@@ -288,6 +288,11 @@ a.masthead-cta:hover { background: var(--c-primary-active); }
 .glow-section--dark { background: var(--c-dark); }
 .glow-kicker--ondark { color: var(--c-amber); }
 .glow-h2--ondark { color: var(--c-on-dark); }
+.glow-resume__head {
+  font-family: var(--c-font-display); font-size: clamp(18px, 2vw, 22px); font-weight: 600;
+  letter-spacing: -0.2px; color: var(--c-on-dark); margin: 2.6rem 0 1.4rem;
+}
+.glow-resume__head:first-of-type { margin-top: 0; }
 
 .glow-timeline { list-style: none; margin: 0 0 3rem; padding: 0; position: relative; }
 .glow-timeline::before {

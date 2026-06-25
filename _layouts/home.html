@@ -96,14 +96,15 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- ===================== EDUCATION (dark band) ===================== -->
-  {% if page.education or page.coursework %}
+  <!-- ===================== EDUCATION + EXPERIENCE (dark band) ===================== -->
+  {% if page.education or page.experience or page.skills or page.coursework %}
   <section class="glow-section glow-section--dark" id="resume">
     <div class="glow-section__wrap">
       <p class="glow-kicker glow-kicker--ondark">Resume</p>
-      <h2 class="glow-h2 glow-h2--ondark">Education.</h2>
+      <h2 class="glow-h2 glow-h2--ondark">Education &amp; experience.</h2>
 
       {% if page.education %}
+      <h3 class="glow-resume__head">Education</h3>
       <ol class="glow-timeline">
         {% for e in page.education %}
         <li class="glow-tl reveal" style="--i: {{ forloop.index0 }}">
@@ -115,6 +116,37 @@ layout: default
         </li>
         {% endfor %}
       </ol>
+      {% endif %}
+
+      {% if page.experience %}
+      <h3 class="glow-resume__head">Experience</h3>
+      <ol class="glow-timeline">
+        {% for x in page.experience %}
+        <li class="glow-tl reveal" style="--i: {{ forloop.index0 }}">
+          <span class="glow-tl__dot" aria-hidden="true"></span>
+          {% if x.date %}<p class="glow-tl__date">{{ x.date }}</p>{% endif %}
+          <h3 class="glow-tl__title">{{ x.role }}</h3>
+          {% if x.org %}<p class="glow-tl__school">{{ x.org }}</p>{% endif %}
+          {% if x.note %}<p class="glow-tl__note">{{ x.note }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+
+      {% if page.skills %}
+      <div class="glow-cw">
+        <h3 class="glow-cw__head">Skills</h3>
+        <div class="glow-cols">
+          {% for group in page.skills %}
+          <div class="glow-col">
+            <h4 class="glow-col__title">{{ group.category }}</h4>
+            <ul class="glow-chiplist">
+              {% for s in group.items %}<li class="glow-chip">{{ s }}</li>{% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       {% endif %}
 
       {% if page.coursework %}
